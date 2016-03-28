@@ -8,11 +8,11 @@ export default Ember.Component.extend({
     },
     save() {
       var params = {
-        owner: this.get('owner'),
-        city: this.get('city'),
-        type: this.get('type'),
-        image: this.get('image'),
-        bedrooms: this.get('bedrooms'),
+        owner: this.get('owner')? this.get('owner'): 'unknown',
+        city: this.get('city')? this.get('city'): 'unknown',
+        type: this.get('type')? this.get('type'): 'unknown',
+        image: "http://lorempixel.com/400/200/city/",
+        bedrooms: this.get('bedrooms')? this.get('bedrooms'): 'unknown',
       };
       this.set('addNewRental', false);
       this.sendAction('save', params);

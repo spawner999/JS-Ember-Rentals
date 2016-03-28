@@ -9,6 +9,10 @@ export default Ember.Route.extend({
       var newAnnouncement = this.store.createRecord('announcement', params);
       newAnnouncement.save();
       this.transitionTo('announcements');
+    },
+    delete(announcement){
+      announcement.destroyRecord();
+      this.transitionTo('announcements');
     }
   }
 });

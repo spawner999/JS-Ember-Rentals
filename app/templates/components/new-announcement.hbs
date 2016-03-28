@@ -1,0 +1,32 @@
+{{yield}}
+
+{{#if addNewAnnouncement}}
+<h1>New Announcement</h1>
+  <div>
+    <form>
+      <div class="form-group">
+        <label for="user">user</label>
+        {{input value=user id="user"}}
+      </div>
+
+      <div class="form-group">
+        <label for="type">Type</label>
+        {{input value=type id="type"}}
+      </div>
+
+      <div class="form-group">
+        <label for="city">City</label>
+        {{input value=city id="city"}}
+      </div>
+
+      <div class="form-group">
+        <label for="message">Message</label>
+        {{input value=message id="message"}}
+      </div>
+
+      <button {{action 'save'}}>Save</button>
+    </form>
+  </div>
+{{else}}
+  <button {{action 'announcementFormShow'}}>New Rental</button>
+{{/if}}
